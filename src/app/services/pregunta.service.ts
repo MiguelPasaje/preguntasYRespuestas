@@ -7,7 +7,7 @@ import { Respuesta } from '../models/respuesta';
 })
 export class PreguntaService {
   indexPregunta = 0;
-  opcionSeleccionada: Respuesta = {
+  opcionSeleccionada: Respuesta | null = {
     nombre: '',
     esCorrecta: 2,
   };

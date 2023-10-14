@@ -19,13 +19,13 @@ export class PreguntaComponent implements OnInit {
     return this.listPreguntas[this.preguntaService.indexPregunta]
       .descripcionPregunta;
   }
-  respuestaSeleccionada(respuesta: Respuesta, indexRespuesta:number) {
+  respuestaSeleccionada(respuesta: Respuesta, indexRespuesta: number) {
     if (this.preguntaService.pregconfirmada === true) {
-      return
+      return;
     }
     this.preguntaService.opcionSeleccionada = respuesta;
     this.preguntaService.deshabilitarBtn = false;
-    this.preguntaService.idexRespuesta = indexRespuesta
+    this.preguntaService.idexRespuesta = indexRespuesta;
   }
 
   AddClassOption(respuesta: Respuesta): string {
@@ -36,7 +36,7 @@ export class PreguntaComponent implements OnInit {
     ) {
       return 'active text.light';
     }
-   /*  } else {
+    /*  } else {
       return '';
     } */
     //respuesta es correcta y esta confirmada
@@ -45,7 +45,7 @@ export class PreguntaComponent implements OnInit {
       this.preguntaService.pregconfirmada &&
       this.preguntaService.opcionSeleccionada.esCorrecta === 1
     ) {
-      return 'list-group-item-success'
+      return 'list-group-item-success';
     }
     // respuesta es incorrecta y esta confirmada
     if (
@@ -53,34 +53,31 @@ export class PreguntaComponent implements OnInit {
       this.preguntaService.pregconfirmada &&
       this.preguntaService.opcionSeleccionada.esCorrecta === 0
     ) {
-      return 'list-group-item-danger'
+      return 'list-group-item-danger';
     }
 
-
-    return ''
+    return '';
   }
-  iconCorrecta(respuesta:Respuesta):boolean{
+  iconCorrecta(respuesta: Respuesta): boolean {
     if (
       respuesta === this.preguntaService.opcionSeleccionada &&
       this.preguntaService.pregconfirmada &&
       this.preguntaService.opcionSeleccionada.esCorrecta === 1
     ) {
-      return true
-    }else{
-      return false
+      return true;
+    } else {
+      return false;
     }
-
   }
-  iconIncorrecta(respuesta:Respuesta):boolean{
+  iconIncorrecta(respuesta: Respuesta): boolean {
     if (
       respuesta === this.preguntaService.opcionSeleccionada &&
       this.preguntaService.pregconfirmada &&
       this.preguntaService.opcionSeleccionada.esCorrecta === 0
     ) {
-      return true
-    }else{
-      return false
+      return true;
+    } else {
+      return false;
     }
-
   }
 }

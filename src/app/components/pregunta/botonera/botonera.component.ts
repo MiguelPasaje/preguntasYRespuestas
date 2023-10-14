@@ -30,7 +30,10 @@ export class BotoneraComponent {
         break;
         case 'Finalizar':
           this.preguntaService.respuestasUsuario.push(this.preguntaService.idexRespuesta!)
-        this.router.navigate(['/respuesta'])
+          this.preguntaService.opcionSeleccionada = null
+          this.preguntaService.pregconfirmada = false
+          this.preguntaService.indexPregunta = 0
+          this.router.navigate(['/respuesta'])
         break;
       default:
         break;
