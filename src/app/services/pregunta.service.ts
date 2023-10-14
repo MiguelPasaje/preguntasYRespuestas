@@ -13,8 +13,9 @@ export class PreguntaService {
   };
 
   deshabilitarBtn: boolean = true;
-  pregconfirmada:boolean = false
-
+  pregconfirmada: boolean = false;
+  idexRespuesta:number | null = null;
+  respuestasUsuario: Array<number> = [];
 
   public preguntas: Pregunta[] = [
     new Pregunta('Cual es la capital de Argentina', [
@@ -24,15 +25,15 @@ export class PreguntaService {
       new Respuesta('Pasto', 0),
     ]),
     new Pregunta('Cual es la capital de Francia', [
-      new Respuesta('Roma', 1),
-      new Respuesta('Paris', 0),
+      new Respuesta('Roma', 0),
+      new Respuesta('Paris', 1),
       new Respuesta('Dublin', 0),
       new Respuesta('Atenas', 0),
     ]),
     new Pregunta('Cual es la capital de Egipto', [
-      new Respuesta('Londres', 1),
+      new Respuesta('Londres', 0),
       new Respuesta('Berlin', 0),
-      new Respuesta('el Cairo', 0),
+      new Respuesta('el Cairo', 1),
       new Respuesta('Casablanca', 0),
     ]),
   ];

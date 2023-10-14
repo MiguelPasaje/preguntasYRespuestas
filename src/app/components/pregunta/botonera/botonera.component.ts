@@ -17,6 +17,13 @@ export class BotoneraComponent {
         this.preguntaService.pregconfirmada = true
         this.btnString = 'Siguiente'
         break;
+      case 'Siguiente':
+        this.preguntaService.indexPregunta++
+        this.preguntaService.respuestasUsuario.push(this.preguntaService.idexRespuesta!)
+        this.preguntaService.deshabilitarBtn = true
+        this.preguntaService.pregconfirmada = false
+        this.btnString = 'Aceptar'
+        break;
       default:
         break;
     }

@@ -3,8 +3,8 @@
 </h4>
 <div class="list-group">
   <li class="list-group-item"
-    *ngFor="let respuesta of listPreguntas[preguntaService.indexPregunta].respuestas"
-    (click)="respuestaSeleccionada(respuesta)"
+    *ngFor="let respuesta of listPreguntas[preguntaService.indexPregunta].respuestas; let i = index"
+    (click)="respuestaSeleccionada(respuesta,i)"
     [ngClass]="AddClassOption(respuesta)"
     >
     {{respuesta.nombre}}

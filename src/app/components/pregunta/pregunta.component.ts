@@ -19,12 +19,13 @@ export class PreguntaComponent implements OnInit {
     return this.listPreguntas[this.preguntaService.indexPregunta]
       .descripcionPregunta;
   }
-  respuestaSeleccionada(respuesta: Respuesta) {
+  respuestaSeleccionada(respuesta: Respuesta, indexRespuesta:number) {
     if (this.preguntaService.pregconfirmada === true) {
       return
     }
     this.preguntaService.opcionSeleccionada = respuesta;
     this.preguntaService.deshabilitarBtn = false;
+    this.preguntaService.idexRespuesta = indexRespuesta
   }
 
   AddClassOption(respuesta: Respuesta): string {

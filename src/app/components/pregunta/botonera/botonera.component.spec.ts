@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BotoneraComponent } from './botonera.component';
+import { BotoneraComponent } from './BotoneraComponent';
 
 describe('BotoneraComponent', () => {
   let component: BotoneraComponent;
@@ -8,7 +8,7 @@ describe('BotoneraComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BotoneraComponent]
+      declarations: [BotoneraComponent],
     });
     fixture = TestBed.createComponent(BotoneraComponent);
     component = fixture.componentInstance;
