@@ -7,8 +7,20 @@ import { PreguntaService } from 'src/app/services/pregunta.service';
   styleUrls: ['./botonera.component.css']
 })
 export class BotoneraComponent {
+  btnString:string = 'Aceptar'
   constructor(public preguntaService: PreguntaService){
-    
+
+  }
+  siguiente(){
+    switch (this.btnString) {
+      case 'Aceptar':
+        this.preguntaService.pregconfirmada = true
+        this.btnString = 'Siguiente'
+        break;
+      default:
+        break;
+    }
+
   }
 
 }

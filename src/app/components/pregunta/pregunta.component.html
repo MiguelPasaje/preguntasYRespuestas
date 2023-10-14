@@ -8,10 +8,10 @@
     [ngClass]="AddClassOption(respuesta)"
     >
     {{respuesta.nombre}}
-    <span class="badge">
+    <span class="badge" *ngIf="iconCorrecta(respuesta)">
       <i class="material-icons correct">check_circle</i>
     </span>
-    <span class="badge">
+    <span class="badge"  *ngIf="iconIncorrecta(respuesta)">
       <i class="material-icons incorrect">clear</i>
     </span>
   </li>

@@ -20,15 +20,66 @@ export class PreguntaComponent implements OnInit {
       .descripcionPregunta;
   }
   respuestaSeleccionada(respuesta: Respuesta) {
+    if (this.preguntaService.pregconfirmada === true) {
+      return
+    }
     this.preguntaService.opcionSeleccionada = respuesta;
     this.preguntaService.deshabilitarBtn = false;
   }
 
-  AddClassOption(respuesta: Respuesta):string {
-    if (respuesta === this.preguntaService.opcionSeleccionada) {
+  AddClassOption(respuesta: Respuesta): string {
+    //pregunta seleccionada y no esta confirmada
+    if (
+      respuesta === this.preguntaService.opcionSeleccionada &&
+      !this.preguntaService.pregconfirmada
+    ) {
       return 'active text.light';
-    }else{
-      return ''
     }
+   /*  } else {
+      return '';
+    } */
+    //respuesta es correcta y esta confirmada
+    if (
+      respuesta === this.preguntaService.opcionSeleccionada &&
+      this.preguntaService.pregconfirmada &&
+      this.preguntaService.opcionSeleccionada.esCorrecta === 1
+    ) {
+      return 'list-group-item-success'
+    }
+    // respuesta es incorrecta y esta confirmada
+    if (
+      respuesta === this.preguntaService.opcionSeleccionada &&
+      this.preguntaService.pregconfirmada &&
+      this.preguntaService.opcionSeleccionada.esCorrecta === 0
+    ) {
+      return 'list-group-item-danger'
+    }
+
+
+    return ''
+  }
+  iconCorrecta(respuesta:Respuesta):boolean{
+    if (
+      respuesta === this.preguntaService.opcionSeleccionada &&
+      this.preguntaService.pregconfirmada &&
+      this.preguntaService.opcionSeleccionada.esCorrecta === 1
+    ) {
+      return true
+    }else{
+      return false
+    }
+
+  }
+  iconIncorrecta(respuesta:Respuesta):boolean{
+    if (
+      respuesta === this.preguntaService.opcionSeleccionada &&
+      this.preguntaService.pregconfirmada &&
+      this.preguntaService.opcionSeleccionada.esCorrecta === 0
+    ) {
+      return true
+    }else{
+      return false
+    }
+
   }
 }

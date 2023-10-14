@@ -13,6 +13,8 @@ export class PreguntaService {
   };
 
   deshabilitarBtn: boolean = true;
+  pregconfirmada:boolean = false
+
 
   public preguntas: Pregunta[] = [
     new Pregunta('Cual es la capital de Argentina', [
